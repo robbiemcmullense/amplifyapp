@@ -1,3 +1,24 @@
-body{
-    background: pink;
+.weather-widget{
+    transition: 0.4 ease-out;
+    min-height: 100vh;
+    background-color: rgb(85, 49, 49);
+    padding: 1rem;
+}
+
+.search-box{
+    input{
+        padding: .5rem 1rem;
+        margin: 1rem auto;
+        display: block;
+        width: 100%;
+    }
+}
+
+.location-box, .weather-box{
+    text-align: center;
+    line-height: 2.3;
+}
+
+.temp{
+    font-size: large;
 }

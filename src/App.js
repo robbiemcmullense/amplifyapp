@@ -9,12 +9,12 @@ import WeatherWidgetScreen from './screens/WeatherWidgetScreen'
 
 function App() {
   return (
-    <div className="App">
-    <Router>
-      <Route path="/" component={HomeScreen} exact />
-      <Route path="/weather" component={WeatherWidgetScreen} />
-    </Router>  
-    </div>
+    <main className="app">
+      <Router>
+        <Route path="/" component={HomeScreen} exact />
+        <Route path="/weather" component={WeatherWidgetScreen} />
+      </Router>  
+    </main>
   );
 }
 
