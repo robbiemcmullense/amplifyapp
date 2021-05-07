@@ -1,10 +1,19 @@
-import './App.css';
+import './styles/styles.scss';
+
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+
+
+import HomeScreen from './screens/HomeScreen'
+
+import WeatherWidgetScreen from './screens/WeatherWidgetScreen'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-      </header>
+    <Router>
+      <Route path="/" component={HomeScreen} exact />
+      <Route path="/weather" component={WeatherWidgetScreen} />
+    </Router>  
     </div>
   );
 }
