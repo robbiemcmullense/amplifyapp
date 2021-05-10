@@ -20,6 +20,7 @@
         border-radius: 2rem;
         border: none;
         box-shadow: 0px 0px 20px rgba(0,0,0,0.35);
+        font-size: medium;
 
         &:focus{
             outline: none;        
@@ -29,6 +30,11 @@
 
 .location{
     font-weight: bolder;
+    text-shadow: 0px 0px 20px rgba(0,0,0,0.35);
+}
+
+.date{
+    text-shadow: 0px 0px 20px rgba(0,0,0,0.35);
 }
 
 .location-box, .weather-box{
@@ -50,9 +56,12 @@
 .weather-box{
     background: rgba(0,0,0,.5);
     display: block;
-    width: 20%;
+    width: 50%;
     margin: 1rem auto;
     border-radius: 2rem;
+    box-shadow: 0px 0px 20px rgba(0,0,0,0.35);
+    padding: 1rem;
+    max-width: 255px;
 }
 
 .weather{
@@ -61,4 +70,5 @@
     margin-top: -2rem;
     display: block;
     text-shadow: 0px 0px 20px rgba(0,0,0,0.35);
+    padding-bottom: .5rem;
 }
