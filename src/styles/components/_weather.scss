@@ -1,24 +1,64 @@
 .weather-widget{
     transition: 0.4 ease-out;
     min-height: 100vh;
-    background-color: rgb(85, 49, 49);
+    background-image: url('../../assets/images/london.jpg');
+    background-size: cover;
+    background-position: center;
     padding: 1rem;
+    width: 100%;
 }
 
 .search-box{
+    margin-top: 10%;
+    display: block;
+
     input{
-        padding: .5rem 1rem;
+        padding: 1rem;
         margin: 1rem auto;
         display: block;
         width: 100%;
+        border-radius: 2rem;
+        border: none;
+        box-shadow: 0px 0px 20px rgba(0,0,0,0.35);
+
+        &:focus{
+            outline: none;        
+        }
     }
+}
+
+.location{
+    font-weight: bolder;
 }
 
 .location-box, .weather-box{
     text-align: center;
     line-height: 2.3;
+    color: white;
 }
 
 .temp{
-    font-size: large;
+    font-size: 3rem;
+    font-weight: bolder;
+    display: block;
+    text-shadow: 0px 0px 20px rgba(0,0,0,0.35);    
+    position: relative;
+    top: -10px;
+
+}
+
+.weather-box{
+    background: rgba(0,0,0,.5);
+    display: block;
+    width: 20%;
+    margin: 1rem auto;
+    border-radius: 2rem;
+}
+
+.weather{
+    font-size: 2rem;
+    font-weight: bolder;
+    margin-top: -2rem;
+    display: block;
+    text-shadow: 0px 0px 20px rgba(0,0,0,0.35);
 }
