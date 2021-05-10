@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const api = {
     key: '7346fdbe1a5a32a9e0f652141756bac7',
@@ -6,8 +6,24 @@ const api = {
 }
 
 function App() {
-    const [query, setQuery] = useState('');
+
+    const [query, setQuery] = useState('London'); // provide a default value
     const [weather, setWeather] = useState({});
+
+    const fetchResult = () => {
+      fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
+          .then(res => res.json())
+          .then(result => {
+            setWeather(result);
+            setQuery('');
+            console.log(result);
+          });
+    }
+
+    useEffect(() => {
+      // search once after first render
+      fetchResult();
+    }, []) // no dependency: execute it once after first render
   
     const search = evt => {
       if (evt.key === "Enter") {
@@ -16,6 +32,7 @@ function App() {
           .then(result => {
             setWeather(result);
             setQuery('');
+            fetchResult();
             console.log(result);
           });
       }
