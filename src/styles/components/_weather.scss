@@ -21,6 +21,12 @@
         border: none;
         box-shadow: 0px 0px 20px rgba(0,0,0,0.35);
         font-size: medium;
+        background-image:url('https://dar-group-150-holborn.s3.eu-west-2.amazonaws.com/images/search-icon.svg');
+        background-repeat:no-repeat;
+        background-position: 98%;
+        outline: 0;
+        background-size: 22px;
+        position: relative;
 
         &:focus{
             outline: none;        
