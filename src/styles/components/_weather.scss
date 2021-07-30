@@ -6,8 +6,8 @@
 }
 
 .search-box{
-    margin-top: 10%;
-    display: block;
+    // margin-top: 10%;
+    display: none;
 
     input{
         padding: 1rem;
@@ -74,7 +74,7 @@
 }
 
 .weather-box{
-    background: #1944bd80;
+    background: #7898f280;
     display: block;
     width: 50%;
     margin: 1rem auto;
