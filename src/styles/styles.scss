@@ -7,3 +7,34 @@
 
 // components
 @import './components/weather';
+
+.cool-block{
+    background:#f5f5f5;
+    padding:1rem;
+    box-sizing: border-box;
+
+    &__affirmation{
+        background: #ffffff;
+        color: #333;
+
+        &__p{
+            font-size: 1.2rem;
+            }
+        }
+    }
+
+
+.awesome-block{
+    background:#e7e7e7;
+    padding:2rem;
+    box-sizing: border-box;
+
+    &__affirmation{
+        background: #333333;
+        color: #ffffff;
+
+        &__p{
+            font-size: 1.4rem;
+            }
+        }
+    }
