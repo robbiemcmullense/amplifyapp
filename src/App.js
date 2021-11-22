@@ -8,8 +8,8 @@ import WeatherWidgetScreenSearch from './screens/Weather/WeatherWidgetScreenSear
 import CovidScreen from './screens/Covid/CovidScreen'
 import CovidCases from './screens/Covid/CovidCases'
 
-import Footer from './components/Footer/Footer'
-import Header from './components/Header/Header'
+// import Footer from './components/Footer/Footer'
+// import Header from './components/Header/Header'
 
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
      
 
       <Router>
-      <Header />
+      {/* <Header /> */}
         <Route path="/" component={HomeScreen} exact />
         <Route path="/covid" component={CovidScreen} />
         <Route path="/covid-cases" component={CovidCases} />
@@ -26,7 +26,7 @@ function App() {
         <Route path="/weather-search" component={WeatherWidgetScreenSearch} />
       </Router>  
 
-      <Footer />
+      {/* <Footer /> */}
     </main>
     
   );
