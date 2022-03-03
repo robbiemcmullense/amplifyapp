@@ -37,6 +37,7 @@ function App() {
           });
       }
     }
+    
   
     const dateBuilder = (d) => {
       let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -74,6 +75,9 @@ function App() {
                 {Math.round(weather.main.temp)}°c
               </div>
               <div className="weather">{weather.weather[0].main}</div>
+              <div className='weather-icon'>
+                <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather img" />
+              </div>
             </div>
           </div>
           ) : ('')}

@@ -10,6 +10,8 @@ function App() {
     const [query, setQuery] = useState('London'); // provide a default value
     const [weather, setWeather] = useState({});
 
+    const imageUrl = 'https://dar-group-150-holborn.s3.eu-west-2.amazonaws.com/images/';
+
     const fetchResult = () => {
       fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
           .then(res => res.json())
@@ -25,18 +27,7 @@ function App() {
       fetchResult();
     }, []) // no dependency: execute it once after first render
   
-    const search = evt => {
-      if (evt.key === "Enter") {
-        fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
-          .then(res => res.json())
-          .then(result => {
-            setWeather(result);
-            setQuery('');
-            fetchResult();
-            console.log(result);
-          });
-      }
-    }
+    
   
     const dateBuilder = (d) => {
       let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -59,16 +50,26 @@ function App() {
           {(typeof weather.main != "undefined") ? (
           <div>
             <div className="weather-box">
-            <div className="location-box">
-              <div className="location">{weather.name}, {weather.sys.country}</div>
-              <div className="date">{dateBuilder(new Date())}</div>
-            </div>
-              <div className="temp">
-                {Math.round(weather.main.temp)}°c
+              <div className="location-box">
+                <div className="location">{weather.name}, {weather.sys.country}</div>
+                <div className="date">{dateBuilder(new Date())}</div>
               </div>
-              <div className="weather">{weather.weather[0].main}</div>
+              <div className="weather-latest">
+                <div className="temp">
+                  <span className="temp-now">{Math.round(weather.main.temp)}°c</span>
+                  <span className="feels-like">Feels like {Math.round(weather.main.feels_like)}°c</span>
+                  <div className="weather">{weather.weather[0].description}</div>
+                </div>  
+                <div className="weather-icon">
+                  <img src={(`${imageUrl}${weather.weather[0].icon}.svg`)} alt='london'/> 
+                </div>
+              </div>
+                
+              </div>
+             
+
             </div>
-          </div>
+          
           ) : ('')}
         </main>
       </div>

@@ -14,9 +14,6 @@ function Header() {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto">
-                            <LinkContainer to="/covid">
-                                <Nav.Link>Covid</Nav.Link>
-                            </LinkContainer>
                             
                             <LinkContainer to="/weather">
                                 <Nav.Link>Weather</Nav.Link>
