@@ -7,7 +7,7 @@ const api = {
 
 function App() {
 
-    const [query, setQuery] = useState('London'); // provide a default value
+    const [query, setQuery] = useState('Plainsboro'); // provide a default value
     const [weather, setWeather] = useState({});
 
     const imageUrl = 'https://dar-group-150-holborn.s3.eu-west-2.amazonaws.com/images/';
@@ -61,13 +61,11 @@ function App() {
                   <div className="weather">{weather.weather[0].description}</div>
                 </div>  
                 <div className="weather-icon">
-                  <img src={(`${imageUrl}${weather.weather[0].icon}.svg`)} alt='london'/> 
+                  <img src={(`${imageUrl}${weather.weather[0].icon}.svg`)} alt='weather'/> 
                 </div>
               </div>
                 
               </div>
-             
-
             </div>
           
           ) : ('')}
