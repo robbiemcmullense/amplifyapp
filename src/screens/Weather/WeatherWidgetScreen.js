@@ -48,12 +48,13 @@ function App() {
           {(typeof weather.main != "undefined") ? (
           <div>
             <div className="weather-box">
-              <div className="location-box">
+              
+              <div className="weather-latest">
+                <div className="temp">
+                <div className="location-box">
                 <div className="location">{weather.name}, {weather.sys.country}</div>
                 <div className="date">{dateBuilder(new Date())}</div>
               </div>
-              <div className="weather-latest">
-                <div className="temp">
                   <span className="temp-now">{Math.round(weather.main.temp)}°c</span>
                   <div className="weather">
                     <span className="feels-like">Feels like {Math.round(weather.main.feels_like)}°c</span>
