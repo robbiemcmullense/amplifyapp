@@ -3,6 +3,7 @@
     // min-height: 100vh;
     // padding: 1rem;
     width: 100%;
+    max-width: 768px;
 }
 
 .search-box{
@@ -76,6 +77,7 @@
     border-radius: 1em;
     //box-shadow: 0px 0px 20px rgba(0,0,0,0.35);
     padding: 1rem;
+    max-width: 768px;
     
 
     @media screen and (max-width:687px){
@@ -85,14 +87,14 @@
 }
 
 .weather{
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: bolder;
     margin-top: -1rem;
     display: block;
     text-shadow: 0px 0px 20px rgba(0,0,0,0.35);
 
     @media screen and (max-width:687px){
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
 }
 
@@ -101,17 +103,17 @@
 }
 
 .temp{
-    width: 60%;
+    width: 65%;
 }
 
 .weather-icon{
-    width: 40%;
+    width: 35%;
     position: relative;
-    top:.5rem;
+    // top:-1rem;
 }
 
 
 .feels-like{
     font-size: small;
-    padding-left: 1rem;
+    display: block;
 }

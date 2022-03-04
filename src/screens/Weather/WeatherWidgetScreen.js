@@ -27,8 +27,6 @@ function App() {
       fetchResult();
     }, []) // no dependency: execute it once after first render
   
-    
-  
     const dateBuilder = (d) => {
       let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
       let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
@@ -42,7 +40,7 @@ function App() {
     }
   
     return (
-      <div className={(typeof weather.main != "undefined") ? ((weather.main.temp > 16) ? 'app warm' : 'app') : 'app'}>
+      <div>
         <main className="weather-widget">
           <div className="search-box">
             
@@ -57,8 +55,10 @@ function App() {
               <div className="weather-latest">
                 <div className="temp">
                   <span className="temp-now">{Math.round(weather.main.temp)}°c</span>
-                  <span className="feels-like">Feels like {Math.round(weather.main.feels_like)}°c</span>
-                  <div className="weather">{weather.weather[0].description}</div>
+                  <div className="weather">
+                    <span className="feels-like">Feels like {Math.round(weather.main.feels_like)}°c</span>
+                    {weather.weather[0].description}
+                    </div>
                 </div>  
                 <div className="weather-icon">
                   <img src={(`${imageUrl}${weather.weather[0].icon}.svg`)} alt='weather'/> 
