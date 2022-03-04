@@ -70,12 +70,11 @@
 }
 
 .weather-box{
-    background: #7898f280;
+    background: #1F8ECC;
     display: block;
-    width: 50%;
+    //width: 50%;
     border-radius: 1em;
-    // margin: 1rem auto;
-    box-shadow: 0px 0px 20px rgba(0,0,0,0.35);
+    //box-shadow: 0px 0px 20px rgba(0,0,0,0.35);
     padding: 1rem;
     
 
@@ -107,6 +106,8 @@
 
 .weather-icon{
     width: 40%;
+    position: relative;
+    top:.5rem;
 }
 
 
