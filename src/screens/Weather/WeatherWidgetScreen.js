@@ -10,27 +10,28 @@ function App() {
     const [query, setQuery] = useState('Plainsboro'); // provide a default value
     const [weather, setWeather] = useState({});
 
-    const imageUrl = 'https://dar-group-150-holborn.s3.eu-west-2.amazonaws.com/images/';
+    const iconUrl = 'https://dar-group-150-holborn.s3.eu-west-2.amazonaws.com/images/';
 
     const fetchResult = () => {
       fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
           .then(res => res.json())
           .then(result => {
             setWeather(result);
-            setQuery('');
+            setQuery('Plainsboro');
             console.log(result);
           });
     }
 
     useEffect(() => {
       // search once after first render
-      fetchResult();
+        fetchResult();
+      //eslint-disable-next-line
     }, []) // no dependency: execute it once after first render
+
   
     const dateBuilder = (d) => {
       let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-      let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-  
+      let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]; 
       let day = days[d.getDay()];
       let date = d.getDate();
       let month = months[d.getMonth()];
@@ -42,33 +43,28 @@ function App() {
     return (
       <div>
         <main className="weather-widget">
-          <div className="search-box">
-            
-          </div>
           {(typeof weather.main != "undefined") ? (
           <div>
             <div className="weather-box">
               
               <div className="weather-latest">
                 <div className="temp">
-                <div className="location-box">
-                <div className="location">{weather.name}, {weather.sys.country}</div>
-                <div className="date">{dateBuilder(new Date())}</div>
-              </div>
+                  <div className="location-box">
+                    <div className="location">{weather.name}, {weather.sys.country}</div>
+                    <div className="date">{dateBuilder(new Date())}</div>
+                  </div>
                   <span className="temp-now">{Math.round(weather.main.temp)}°c</span>
                   <div className="weather">
                     <span className="feels-like">Feels like {Math.round(weather.main.feels_like)}°c</span>
                     {weather.weather[0].description}
-                    </div>
+                  </div>
                 </div>  
                 <div className="weather-icon">
-                  <img src={(`${imageUrl}${weather.weather[0].icon}.svg`)} alt='weather'/> 
+                  <img src={(`${iconUrl}${weather.weather[0].icon}.svg`)} alt='weather'/> 
                 </div>
               </div>
-                
-              </div>
             </div>
-          
+          </div>
           ) : ('')}
         </main>
       </div>
