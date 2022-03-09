@@ -7,7 +7,9 @@ const api = {
 
 function App() {
 
-    const [query, setQuery] = useState('Plainsboro'); // provide a default value
+    const london = 'London';
+
+    const [query, setQuery] = useState(london); // provide a default value
     const [weather, setWeather] = useState({});
 
     const iconUrl = 'https://dar-group-150-holborn.s3.eu-west-2.amazonaws.com/images/';
@@ -17,17 +19,15 @@ function App() {
           .then(res => res.json())
           .then(result => {
             setWeather(result);
-            setQuery('Plainsboro');
+            setQuery(london);
             console.log(result);
           });
     }
 
     useEffect(() => {
-      // search once after first render
         fetchResult();
-      //eslint-disable-next-line
+        //eslint-disable-next-line
     }, []) // no dependency: execute it once after first render
-
   
     const dateBuilder = (d) => {
       let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -58,7 +58,7 @@ function App() {
                     <span className="feels-like">Feels like {Math.round(weather.main.feels_like)}°c</span>
                     {weather.weather[0].description}
                   </div>
-                </div>  
+                </div>
                 <div className="weather-icon">
                   <img src={(`${iconUrl}${weather.weather[0].icon}.svg`)} alt='weather'/> 
                 </div>
